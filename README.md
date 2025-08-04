@@ -12,7 +12,7 @@ The `server-stats.sh` script provides the following information:
 - ✅ **Top Processes by CPU** — Top 5 processes consuming the most CPU.
 - ✅ **Top Processes by Memory** — Top 5 processes consuming the most memory.
 
-### 🧪 Optional Stretch Features
+### 🧪 Optional Stretch Features will be updated later
 These are included for deeper insight into your system (optional but useful):
 
 - 🖥️ OS version
@@ -30,7 +30,7 @@ These are included for deeper insight into your system (optional but useful):
 
 ### Usage
 
-1. Clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/MosabAwadAhmedAlhadi/ServerPerformanceStats.git
