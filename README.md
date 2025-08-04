@@ -33,5 +33,6 @@ These are included for deeper insight into your system (optional but useful):
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/server-stats.git
-cd server-stats
+git clone https://github.com/MosabAwadAhmedAlhadi/ServerPerformanceStats.git
+cd ServerPerformanceStats
+chmod +x server-stats.sh
