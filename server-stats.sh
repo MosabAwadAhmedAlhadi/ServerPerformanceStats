@@ -33,3 +33,7 @@ cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | tr -d '"'
 #Up time
 echo -e "\n---- Uptime ----"
 uptime -p
+
+#Load Avarage
+echo -e "\n---- Load Avarage ----"
+uptime | awk -F'load average:' '{print $2}' | sed 's/^ //'
