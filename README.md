@@ -32,9 +32,16 @@ These are included for deeper insight into your system (optional but useful):
 
 ### Usage
 
-Clone the repository:
+1.Clone the repository:
 
 ```bash
 git clone https://github.com/MosabAwadAhmedAlhadi/ServerPerformanceStats.git
 cd ServerPerformanceStats
+
+2.Make the script executable:
+```bash
 chmod +x server-stats.sh
+
+3.Run the script:
+```bash
+./server-stats.sh
