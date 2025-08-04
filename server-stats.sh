@@ -1,11 +1,23 @@
 #!/bin/bash
 echo "==== Server Performance Stats ===="
 
-echo -e "\n ---- CPU Usage ----"
+#CPU Usage
+echo -e "\n---- CPU Usage ----"
 top -bn1 | grep "Cpu(s)" | awk '{print "CPU Usage: " 100 - $8"%"}'
 
-echo -e "\n ---- Memory Usage ----"
+#Memory Usage
+echo -e "\n---- Memory Usage ----"
 free | awk ' /^Mem:/ {
 	used = $2 - $7;
 	printf("Used Memory: %s\nFree Memory: %s\nUsage Percentage: (%.2f%%)\n", used, $7, (used/$2)*100)	
 }'
+
+#Disk Usage
+echo -e "\n---- Disk Usage ----"
+df -h --total | awk ' /^total/ {
+	printf("Used disk space: %s\nFree disk space: %s\nTotal disk space: %s\nUsage Percentage: %s\n", $3, $4, $2, $5)
+}'
+
+#Top 5 CPU-consuming processes
+echo -e "\n---- Top 5 Process by CPU Usage ----"
+ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6
