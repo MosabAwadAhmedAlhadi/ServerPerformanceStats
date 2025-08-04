@@ -19,5 +19,9 @@ df -h --total | awk ' /^total/ {
 }'
 
 #Top 5 CPU-consuming processes
-echo -e "\n---- Top 5 Process by CPU Usage ----"
+echo -e "\n---- Top 5 Processes by CPU Usage ----"
 ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6
+
+#Top 5 Memory consuming processes
+echo -e "\n---- Top 5 Processes by Memory Usage ----"
+ps -eo pid,comm,%mem --sort=-%mem | head -n 6
