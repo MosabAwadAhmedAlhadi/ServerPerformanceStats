@@ -29,3 +29,7 @@ ps -eo pid,comm,%mem --sort=-%mem | head -n 6
 #OS version
 echo -e "\n---- OS Version ----"
 cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | tr -d '"'
+
+#Up time
+echo -e "\n---- Uptime ----"
+uptime -p
