@@ -25,3 +25,7 @@ ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6
 #Top 5 Memory consuming processes
 echo -e "\n---- Top 5 Processes by Memory Usage ----"
 ps -eo pid,comm,%mem --sort=-%mem | head -n 6
+
+#OS version
+echo -e "\n---- OS Version ----"
+cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | tr -d '"'
