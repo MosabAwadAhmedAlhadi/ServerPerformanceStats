@@ -1,6 +1,8 @@
 # 🖥️ Server Stats Script
 
 A simple Bash script to analyze basic server performance statistics on any Linux system.
+a project from the road map projects:
+https://roadmap.sh/projects/server-stats
 
 ## 📋 Features
 
