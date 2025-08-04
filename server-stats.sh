@@ -37,3 +37,43 @@ uptime -p
 #Load Avarage
 echo -e "\n---- Load Avarage ----"
 uptime | awk -F'load average:' '{print $2}' | sed 's/^ //'
+
+#Logged in users
+echo -e "\n---- Logged-In Users ----"
+who | awk '{print $1}'| sort | uniq
+
+#Failed Login Attempts
+echo -e "\n---- Failed Login Attempts ----"
+if [ -f /var/log/auth.log ];then
+    LOG_FILE="/var/log/auth.log"
+elif [ -f /var/log/secure ];then
+    LOG_FILE="/var/log/secure"
+else
+    echo "NO LOG FILE FOUND FOR FAILED LOGIN ATTEMPTS."
+    exit 1
+fi
+FAILED_COUNT=$(grep "Failed password" "$LOG_FILE" | wc -l)
+echo "Number of failed login attempts: $FAILED_COUNT"
+
+if [ "$FAILED_COUNT" -gt 0 ];then
+    echo -e "\nLast 5 failed Login attempts:"
+    grep "Failed password" "$LOG_FILE" | tail -n 5
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
